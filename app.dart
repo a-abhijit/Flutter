@@ -1,3 +1,4 @@
+import 'package:demoapp/widget/ownwidget.dart';
 import 'package:flutter/material.dart';
 import 'module8class1.dart';
 import 'module8class2.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "batch 11",
-      home: (Livetest2()),
+      home: Ownwidget(),
     );
   }
 
