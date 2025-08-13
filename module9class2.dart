@@ -70,7 +70,7 @@ class Module9class2 extends StatelessWidget {
             Container(
               height: 200,
               color: Colors.green,
-              child: Center(child: Text("Settings",style: TextStyle(fontSize: 30),))
+              child: Center(child: Text("Settings",style: TextStyle(fontSize: 30),)),
             )
           ],
         ),
