@@ -2,6 +2,7 @@ import 'package:demoapp/widget/Calculator%20app/calculatorApp.dart';
 import 'package:demoapp/widget/module%2011/counter_app.dart';
 import 'package:demoapp/widget/ownwidget.dart';
 import 'package:flutter/material.dart';
+import 'Money Management App/money_management.dart';
 import 'Water Tracker App/WaterTracker.dart';
 import 'module8class1.dart';
 import 'module8class2.dart';
@@ -25,11 +26,11 @@ class MyApp extends StatelessWidget{
         brightness: Brightness.light
       ),
       title: "batch 11",
-      initialRoute: '/waterTrack',
+      initialRoute: '/moneyM',
       routes: {
         // '/class2': (context)=> Module8Class1(),
         // '/class3': (context)=> Module8class3(),
-        '/waterTrack':(context)=>WaterTracker()
+        '/moneyM':(context)=>MoneyManagement()
 
       },
     );

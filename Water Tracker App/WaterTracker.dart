@@ -10,6 +10,25 @@ class WaterTracker extends StatefulWidget {
 }
 
 class _WaterTrackerState extends State<WaterTracker> {
+
+  int currentIntake=0;
+  final int goal =5000;
+  double progressval=0;
+  late double percentage=0;
+
+  void waterCalc(int amount){
+    setState(() {
+      if(currentIntake<=5000){
+        currentIntake=(currentIntake+amount).clamp(0, 5000);
+      }
+      progressval = (currentIntake/goal);
+      percentage=progressval*100.truncate();
+
+
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,12 +56,12 @@ class _WaterTrackerState extends State<WaterTracker> {
               child: Column(
                 children: [
                   Text(
-                    "Today's in Tank",
+                    "Water Level",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "2000 Litters",
+                    "${currentIntake} Litters",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w800,
@@ -64,19 +83,20 @@ class _WaterTrackerState extends State<WaterTracker> {
                     strokeWidth: 20,
                     color: Colors.blue,
                     padding: EdgeInsets.all(30),
-                    value: 0.3,
+                    value: progressval,
                   ),
                 ),
                 Text(
-                  "70%",
+                  "${percentage}%",
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             Wrap(
               children: [
-                level_widget(liter: '100'),
-                level_widget(liter: '200')
+                level_widget(liter: '100', onclick: ()=>waterCalc(100),),
+                level_widget(liter: '500', onclick: ()=>waterCalc(500),),
+                level_widget(liter: '800', onclick: ()=>waterCalc(800),)
 
               ],
             ),
