@@ -4,6 +4,7 @@ import 'package:demoapp/widget/ownwidget.dart';
 import 'package:flutter/material.dart';
 import 'Money Management App/money_management.dart';
 import 'Water Tracker App/WaterTracker.dart';
+import 'all_sample.dart';
 import 'module8class1.dart';
 import 'module8class2.dart';
 import 'flutterclass3.dart';
@@ -26,11 +27,11 @@ class MyApp extends StatelessWidget{
         brightness: Brightness.light
       ),
       title: "batch 11",
-      initialRoute: '/moneyM',
+      initialRoute: '/AllSample',
       routes: {
         // '/class2': (context)=> Module8Class1(),
         // '/class3': (context)=> Module8class3(),
-        '/moneyM':(context)=>MoneyManagement()
+        '/AllSample':(context)=>AllSample()
 
       },
     );
