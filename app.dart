@@ -24,14 +24,20 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        brightness: Brightness.light
+        primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.black87,
+        )
       ),
+
+
       title: "batch 11",
       initialRoute: '/AllSample',
       routes: {
         // '/class2': (context)=> Module8Class1(),
         // '/class3': (context)=> Module8class3(),
-        '/AllSample':(context)=>AllSample()
+        '/AllSample':(context)=>MoneyManagement(),
 
       },
     );
