@@ -3,6 +3,7 @@ import 'package:demoapp/widget/module%2011/counter_app.dart';
 import 'package:demoapp/widget/ownwidget.dart';
 import 'package:flutter/material.dart';
 import 'Money Management App/money_management.dart';
+import 'Todo App/todoApp.dart';
 import 'Water Tracker App/WaterTracker.dart';
 import 'all_sample.dart';
 import 'module8class1.dart';
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.blue,
         )
       ),
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget{
       routes: {
         // '/class2': (context)=> Module8Class1(),
         // '/class3': (context)=> Module8class3(),
-        '/AllSample':(context)=>MoneyManagement(),
+        '/AllSample':(context)=>Todoapp(),
 
       },
     );

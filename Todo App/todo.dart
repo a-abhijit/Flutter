@@ -1,0 +1,14 @@
+
+
+class TodoClass{
+  final String title;
+  final String description;
+  final DateTime date;
+  final String status;
+
+  TodoClass({required this.title,
+    required this.description,
+    required this.date,
+    required this.status});
+
+}
