@@ -1,3 +1,4 @@
+import 'package:demoapp/RestAPI/homeScreen.dart';
 import 'package:demoapp/widget/Calculator%20app/calculatorApp.dart';
 import 'package:demoapp/widget/module%2011/counter_app.dart';
 import 'package:demoapp/widget/ownwidget.dart';
@@ -25,11 +26,12 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        brightness: Brightness.light,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blue,
-        )
+colorSchemeSeed: Colors.purpleAccent
+        //primarySwatch: Colors.blue,
+        // brightness: Brightness.light,
+        // appBarTheme: AppBarTheme(
+        //   backgroundColor: Colors.blue,
+        // )
       ),
 
 
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget{
       routes: {
         // '/class2': (context)=> Module8Class1(),
         // '/class3': (context)=> Module8class3(),
-        '/AllSample':(context)=>Todoapp(),
+        '/AllSample':(context)=>Homescreen(),
 
       },
     );
