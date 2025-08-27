@@ -1,4 +1,5 @@
 import 'package:demoapp/RestAPI/add_new_product.dart';
+import 'package:demoapp/RestAPI/update_product.dart';
 import 'package:flutter/material.dart';
 
 class Homescreen extends StatefulWidget {
@@ -25,6 +26,29 @@ class _HomescreenState extends State<Homescreen> {
         itemBuilder: (context, index) {
           return ListTile(
             leading: CircleAvatar(),
+            trailing: PopupMenuButton<PopmenuOptions>(
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem(
+                    value: PopmenuOptions.update,
+                    child: Text("Update"),
+                  ),
+
+                  PopupMenuItem(
+                    value: PopmenuOptions.delete,
+                    child: Text("Delete"),
+                  ),
+                ];
+              },
+              onSelected: (PopmenuOptions selected){
+                if (selected == PopmenuOptions.update){
+                  PopmenuOptions.update;
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>UpdateProduct()));
+                }else if(selected == PopmenuOptions.delete){
+                  print("delete");
+                }
+              },
+            ),
             title: Text("Product name"),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,13 +65,22 @@ class _HomescreenState extends State<Homescreen> {
             ),
           );
         },
+
         separatorBuilder: (context, index) {
           return Divider(indent: 70);
         },
       ),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNewProduct()));
-      }),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddNewProduct()),
+          );
+        },
+      ),
     );
   }
 }
+
+enum PopmenuOptions { delete, update }
